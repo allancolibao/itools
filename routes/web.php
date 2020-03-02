@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MainController@index')->name('home');
+Route::any('/search','MainController@search')->name('search');
+Route::get('/household/{eacode}/{hcn}/{shsn}','MainController@household')->name('household');
+Route::get('/indiv/{eacode}/{hcn}/{shsn}','MainController@individuals')->name('individuals');
+Route::get('/indiv/{eacode}/{hcn}/{shsn}/{memcode}/{surname}/{givenname}','MainController@individual')->name('individual');

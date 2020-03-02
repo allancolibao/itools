@@ -1,8 +1,7 @@
 :root {
-    --main: #080a0c;
-    --secondary: #35ff57;
-    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+    --main: #08090a;
+    --secondary: #00ff2a;
+    --font-family-monospace:  'Courier New', Courier, monospace;
 }
 
 *,
@@ -11,8 +10,12 @@
     box-sizing: border-box
 }
 
+::-webkit-scrollbar {
+    display: none;
+  }
+
 html {
-    font-family: sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent
@@ -20,9 +23,90 @@ html {
 
 body {
     background-color: var(--main);
+    text-align: center;
 }
 
 
 h1 {
     color: var(--secondary);
 }
+
+h5 {
+    color: var(--secondary);
+    font-size: 1.5em;
+}
+
+h6 {
+    padding: 1px;
+    color: var(--secondary);
+    font-size: 1em;
+}
+
+.form-control {
+    padding: 1rem;
+    background: transparent;
+    outline: none;
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+    margin-top: 1rem;
+}
+
+.btn {
+    padding: 1rem;
+    background: var(--secondary);
+    outline: none;
+    border: 1px solid var(--secondary);
+    color: var(--main);
+    margin-top: 1rem;
+}
+
+table {
+    margin: 2rem 0;
+    border-collapse: collapse;
+    width: 100%;
+    color: var(--secondary);
+  }
+  
+table td, th {
+    border: 1px solid #85ff60;
+    padding: 8px;
+  }
+  
+  
+table tr:hover {
+    background-color:  #141414;
+}
+  
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #46eb14;
+    color: white;
+    font-size: 1.2em;
+  }
+
+ button {
+    padding: 0.5rem 1rem;
+    background: var(--secondary);
+    outline: none;
+    border: 1px solid var(--secondary);
+    color: var(--main);
+ } 
+
+ .alert {
+     margin: 2rem;
+     padding: 1rem;
+     font-size: 1.2em;
+     color: var(--secondary);
+ }
+
+ .update-form {
+     display: block;
+     margin: auto;
+     width: 70%;
+     margin-top: 2rem;
+     border: 1px solid var(--secondary);
+     padding: 2rem;
+     text-align: center;
+ }

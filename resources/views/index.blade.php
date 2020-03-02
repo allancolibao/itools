@@ -12,27 +12,23 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                   <h1>iTools</h1>
-                </div>
-
+            <div class="container">
+                <h1 text-center>Welcome to iTools</h1>
+                <form method="POST" action="{{ action('MainController@search') }}" role="search">
+                    @csrf
+                    <div class="input-group">
+                    <input id="key" type="text" name="key" class="form-control" placeholder="Enter EACODE..." aria-label="key" aria-describedby="basic-addon2"  required autofocus>
+                    <button type="submit" name='submit' value='search' class="btn"><i class="fas fa-search fa-sm text-white-50"></i>Search</button>
+                    </div>
+                </form>
             </div>
         </div>
+
+        @include('inc.message')
+
+        <main>
+            @yield('content')
+        </main>
 
         <!-- Page level custom scripts -->
         <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>
