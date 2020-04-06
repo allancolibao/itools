@@ -11,12 +11,19 @@ class User extends Authenticatable
     use Notifiable;
 
     /**
+     * Name of the connection.
+     *
+     * @var array
+     */
+    protected $connection = 'sqlite';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'username', 'email', 'password',
     ];
 
     /**

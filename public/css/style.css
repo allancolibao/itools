@@ -1,6 +1,9 @@
 :root {
     --main: #08090a;
     --secondary: #00ff2a;
+    --label: #ffee00;
+    --warning: #ff47ac;
+    --success: #3cc8ff;
     --font-family-monospace:  'Courier New', Courier, monospace;
 }
 
@@ -40,6 +43,10 @@ h6 {
     padding: 1px;
     color: var(--secondary);
     font-size: 1em;
+}
+
+label {
+    color: var(--secondary);
 }
 
 .form-control {
@@ -92,7 +99,13 @@ table th {
     outline: none;
     border: 1px solid var(--secondary);
     color: var(--main);
+    cursor: pointer;
  } 
+
+ a {
+    text-decoration: none;
+    color: var(--secondary);
+ }
 
  .alert {
      margin: 2rem;
@@ -109,4 +122,84 @@ table th {
      border: 1px solid var(--secondary);
      padding: 2rem;
      text-align: center;
+ }
+
+ /* Start search animation */
+ .animation {
+    margin-top: 3rem;
+ }
+
+ .line-1{
+    position: relative;
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgb(255, 255, 255);
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);    
+}
+
+.anim-typewriter{
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 24em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgb(255, 255, 255);}
+  to{border-right-color: transparent;}
+}
+
+/* Replacement link */
+.rep-link h6{
+    color: var(--label);
+}
+
+label {
+    font-size: 1.1em;
+}
+
+.rep-label {
+    color:  var(--label);
+}
+
+/* alert style */
+.alert-warning {
+    color: var(--warning);
+}
+
+.alert-success {
+    color: var(--success);
+}
+
+/* Logout and version */
+.logout {
+    text-align: right;
+    text-decoration: none;
+    padding: 1rem 2rem 0 0;
+}
+
+.logout a {
+    color: var(--label);
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.logout .version {
+    padding: 0 0 0 2rem;
+}
+
+/* footer */
+.footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-top: 2rem;
+    color: var(--secondary);
+    text-align: center;
  }
